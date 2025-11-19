@@ -13,6 +13,7 @@
 * **specialty**: VARCHAR(255)
 * **email**: VARCHAR(255), Unique
 * **availability**: VARCHAR(255)
+* **availableTimes**: VARCHAR(255)
 
 ## 3. Table: Appointment
 * **id**: INT, Primary Key, Auto Increment
@@ -20,3 +21,11 @@
 * **doctor_id**: INT, Foreign Key (References Doctor(id))
 * **appointment_date**: DATETIME
 * **status**: VARCHAR(50)
+
+## 4. Table: Prescription (Added Requirement)
+* **id**: INT, Primary Key, Auto Increment
+* **patient_id**: INT, Foreign Key (References Patient(id))
+* **doctor_id**: INT, Foreign Key (References Doctor(id))
+* **medicine_name**: VARCHAR(255)
+* **dosage**: VARCHAR(100)
+* **notes**: TEXT
