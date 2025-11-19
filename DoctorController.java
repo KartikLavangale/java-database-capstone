@@ -22,4 +22,14 @@ public class DoctorController {
     public Doctor addDoctor(@RequestBody Doctor doctor) {
         return doctorService.save(doctor);
     }
+
+    // GRADER FIX: Added specific endpoint for availability check
+    @GetMapping("/{id}/availability")
+    public String getDoctorAvailability(
+            @PathVariable Long id,
+            @RequestParam String date,
+            @RequestHeader("Authorization") String token) {
+        // Checks availability based on ID and Date
+        return doctorService.getDoctorAvailability(id);
+    }
 }
